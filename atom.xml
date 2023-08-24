@@ -6,7 +6,7 @@
   <link href="https://gainlos.github.io/atom.xml" rel="self"/>
   
   <link href="https://gainlos.github.io/"/>
-  <updated>2023-08-24T03:09:10.487Z</updated>
+  <updated>2023-08-24T07:48:18.912Z</updated>
   <id>https://gainlos.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gainlos.github.io/2023/08/24/start-hexo/"/>
     <id>https://gainlos.github.io/2023/08/24/start-hexo/</id>
     <published>2023-08-24T03:08:03.000Z</published>
-    <updated>2023-08-24T03:09:10.487Z</updated>
+    <updated>2023-08-24T07:48:18.912Z</updated>
     
     
       
@@ -34,6 +34,8 @@
     
     
     
+    
+    <category term="blog" scheme="https://gainlos.github.io/tags/blog/"/>
     
   </entry>
   
