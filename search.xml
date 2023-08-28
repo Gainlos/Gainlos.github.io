@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>start-hexo</title>
-    <url>/2023/08/24/start-hexo/</url>
-    <content><![CDATA[<h1 id="Start-of-my-blog"><a href="#Start-of-my-blog" class="headerlink" title="Start of my blog"></a>Start of my blog</h1><pre><code>突然的想法，算是对自己生活的一个记录，以一种古早的方式在未来的互联网海洋里留下自己的一丝痕迹
-</code></pre>
+    <title>Start-Hexo</title>
+    <url>/2023/08/24/Start-Hexo/</url>
+    <content><![CDATA[<h1 id="A-Beginning-of-Blog-Lifestyle"><a href="#A-Beginning-of-Blog-Lifestyle" class="headerlink" title="A Beginning of Blog Lifestyle"></a>A Beginning of Blog Lifestyle</h1><ul>
+<li>搭建自己的博客是一个突然的想法，算是对自己生活的一个记录，以一种古早的方式在未来的互联网海洋里留下自己的一丝痕迹；</li>
+<li>考虑到增加文章的便捷流程和静态页面的良好性能，目前选择<a href="https://hexo.io/zh-cn">Hexo</a>作为搭建博客的工具，同时使用Github Page作为博客的托管平台,主题选择的是清新快捷的<a href="https://github.com/shen-yu/hexo-theme-ayer">Ayer</a>；</li>
+</ul>
+<h1 id="以下记录部署Hexo过程"><a href="#以下记录部署Hexo过程" class="headerlink" title="以下记录部署Hexo过程"></a>以下记录部署Hexo过程</h1><h2 id="申请Github-Page"><a href="#申请Github-Page" class="headerlink" title="申请Github Page"></a>申请Github Page</h2><p>现在的GitHub Page申请流程已经十分简便:</p>
+<ol>
+<li>新建仓库，命名为<code>&#123;usrname&#125;.github.io</code></li>
+<li>在仓库设置中找到GitHub Page，设置主要的Branch(这里的主要问题是古早的git原始分支都是master，但是Github目前的默认分支时main，在部署时本地与Github的分支需要同步，不如提前就在申请Page时设置)</li>
+<li>后面还需要配置Github Deployment，但是Hexo可以通过插件自动完成这一步，后面会有操作过程。</li>
+</ol>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ol>
+<li>安装Node.js</li>
+<li>安装Hexo<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+<li>初始化Hexo<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>本地预览，在此你已经在可以看到一个完备的静态页面<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="部署Hexo-至-Github-Page"><a href="#部署Hexo-至-Github-Page" class="headerlink" title="部署Hexo 至 Github Page"></a>部署Hexo 至 Github Page</h2><ol>
+<li>安装hexo-deployer-git插件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>修改配置文件(.&#x2F;_config.yml)<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> <span class="comment"># 仓库地址 https://github.com/&#123;usrname&#125;/&#123;usrname&#125;.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> [<span class="string">branch</span>] <span class="comment"># 确保这个Branch和Github Page的Branch一致</span></span><br></pre></td></tr></table></figure></li>
+<li>部署，至此已经实现了一个简单的Github博客，接下来就就可以开始写作了 (<a href="https://hexo.io/zh-cn">Hexo</a>或者自带的hello-word.md有不错的模板)<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="美化Blog页面"><a href="#美化Blog页面" class="headerlink" title="美化Blog页面"></a>美化Blog页面</h1><p>我选择的是<a href="https://github.com/shen-yu/hexo-theme-ayer">Ayer</a>主题，主要看重他的简洁直接而富有美感。</p>
+<ol>
+<li>下载主题<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-ayer</span><br></pre></td></tr></table></figure></li>
+<li>修改配置文件(.&#x2F;_config.yml)<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">hexo-theme-ayer</span></span><br></pre></td></tr></table></figure></li>
+<li>复制主题的配置文件(.&#x2F;node_modules&#x2F;hexo-theme-ayer&#x2F;_config.yml)至根目录下并改名为_config.ayer.yml</li>
+<li>修改配置文件(.&#x2F;_config.ayer.yml)<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">Home:</span> <span class="string">/</span></span><br><span class="line">  <span class="attr">Archives:</span> <span class="string">/archives</span></span><br><span class="line">  <span class="attr">Categories:</span> <span class="string">/categories</span></span><br><span class="line">  <span class="attr">Tags:</span> <span class="string">/tags</span></span><br><span class="line">  <span class="attr">About:</span> <span class="string">/about</span></span><br></pre></td></tr></table></figure></li>
+<li>为categories和tags创建页面<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure></li>
+<li>为archives下载插件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-archive </span><br><span class="line">npm install hexo-generator-category</span><br><span class="line">npm install hexo-generator-tag</span><br></pre></td></tr></table></figure></li>
+<li>修改配置文件(.&#x2F;_config.yml)<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">0</span></span><br><span class="line">  <span class="attr">yearly:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">monthly:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">daily:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<li>重新启动server<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
       <tags>
         <tag>blog</tag>
       </tags>
