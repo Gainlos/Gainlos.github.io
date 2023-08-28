@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Start-Hexo</title>
-    <url>/2023/08/24/Start-Hexo/</url>
+    <url>/2023/08/24/start-hexo/</url>
     <content><![CDATA[<h1 id="A-Beginning-of-Blog-Lifestyle"><a href="#A-Beginning-of-Blog-Lifestyle" class="headerlink" title="A Beginning of Blog Lifestyle"></a>A Beginning of Blog Lifestyle</h1><ul>
 <li>搭建自己的博客是一个突然的想法，算是对自己生活的一个记录，以一种古早的方式在未来的互联网海洋里留下自己的一丝痕迹；</li>
 <li>考虑到增加文章的便捷流程和静态页面的良好性能，目前选择<a href="https://hexo.io/zh-cn">Hexo</a>作为搭建博客的工具，同时使用Github Page作为博客的托管平台,主题选择的是清新快捷的<a href="https://github.com/shen-yu/hexo-theme-ayer">Ayer</a>；</li>
